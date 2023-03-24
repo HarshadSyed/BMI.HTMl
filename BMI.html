@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+   body{
+       background: linear-gradient(to right, rgb(255, 255, 255),rgb(0, 253, 241));
+   }
+   .box{
+       height: 300px;
+       width: 300px;
+       border: rgb(28, 26, 26) 5px solid;
+       color: rgb(0, 0, 0);
+       text-align: center;
+       margin-top: 20px;
+       top: 26.5%;
+       border-radius: 15px;
+
+       
+   }
+   .box1{
+       margin-top: 100px;
+
+   }
+
+   #bu{
+       border-radius: 5px;
+   }
+   .h2{
+       /* background: linear-gradient(to left, orange,rgb(192, 59, 59)); */
+       font-size: xx-large;
+       
+       color: rgb(0, 0, 0);
+       border-radius: 10px;
+       padding: 20px;
+       
+   }
+  
+   #para{
+       width: 500px;
+       height: 600px;
+       /* border: red solid 5px; */
+       align-items: stretch;
+       width: fit-content;
+   }
+  
+
+   .main{
+       width: 500px;
+       height: 600px;
+      
+   }
+   
+
+   .con{
+       float: left;
+       display: flex;
+   }
+   </style>
+</head>
+<body>
+   <h2 class="h2"> BMI Calculater</h2>
+   <div class="con">
+       <p id="para">BMI (Body Mass Index) is a number calculated from a person's weight and height. BMI is a fairly
+           reliable indicator of body fatness for most people. Additionally, BMI is an inexpensive and easy-to-perform
+           method of screening for weight categories that may lead to health problems. A person’s Body-Mass Index, or BMI,
+           helps them check whether they’re a healthy weight for their height. If a person weighs less or more than the
+           recommended weight for their height, it could lead to health issues in the future. While BMI is not the only
+           factor individuals should consider while working on their health and fitness, it is a good starting point. To
+           understand what your BMI is, you need to know your height and weight. You can then use an online BMI calculator
+           to check your BMI, which will help you understand if you’re underweight, a healthy weight, overweight or obese.
+           Or, you can measure your height in metres and weight in kilograms. Divide your weight by your height squared to
+           calculate your BMI.</p>
+       </p>
+   
+       <center>
+           <div class="main">
+               <table border="2px" ; style="background-color: aliceblue;">
+                   <th>BMI Categories</th>
+                   <tr>
+                       <td>Underweight = <18.5</td>
+                   </tr>
+                   <tr>
+                       <td>Normal weight = 18.5–24.9</td>
+                   </tr>
+                   <tr>
+                       <td>Overweight = 25–29.9 <18.5</td>
+                   </tr>
+                   <tr>
+                       <td>Obesity = BMI of 30 or greater<18.5</td>
+                   </tr>
+               </table>
+   
+   
+   
+               <div class="box">
+                   <div class="box1">
+                       Enter Your Height(Centimeter):<br>
+                       <input type="number" id="Hei"><br>
+                       Enter Your Weight(Kg):<br>
+                       <input type="number" id="Wei"><br>
+                       <br>
+   
+                       <button onclick="Cal_BMI()" id="bu">Result</button><br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                       <br>
+                   </div>
+   
+   
+               </div>
+           </div>
+   
+       </center>
+   
+       <img src="C:\Users\SYED HARSHAD\Downloads\shutterstock_766126732.jpg" alt="" width="300px" height="400px" style="border-radius: 20px;">
+   </div>
+
+
+
+   <script>
+       function Cal_BMI(){
+           var height=parseInt(document.getElementById("Hei").value);
+           var weight=parseInt(document.getElementById("Wei").value);
+           var  BMI = (weight) / (((height/100) * (height/100)));
+
+           if(BMI<18.5){
+               alert("Under Weight");
+           }
+
+           else if(BMI>18.5 && BMI<24.9){
+               alert("Normal");
+           }
+
+           else if(BMI>25 && BMI<29.9){
+               alert("Over Weight");
+           }
+           else if(BMI>30 && BMI<34.9){
+               alert("obesity(class I)");
+           }
+           else if(BMI>35 && BMI<39.9){
+               alert("obesity(class II)");
+           }
+           else 
+           {
+               alert("extreme obesity");
+           }
+       }
+   </script>
+</body>
+</html>
